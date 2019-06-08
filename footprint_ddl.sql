@@ -25,7 +25,9 @@ CREATE TABLE public.footprint
     "Earths_Required" double precision,
     "Countries_Required" double precision,
     "Data_Quality" text COLLATE pg_catalog."default",
-    "ISO_code" text COLLATE pg_catalog."default"
+    "ISO_code" text COLLATE pg_catalog."default",
+    footprint_id integer NOT NULL DEFAULT nextval('footprint_footprint_id_seq'::regclass) ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    CONSTRAINT footprint_pkey PRIMARY KEY (footprint_id)
 )
 WITH (
     OIDS = FALSE

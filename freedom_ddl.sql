@@ -35,7 +35,9 @@ CREATE TABLE public.freedom
     "EF_Reg_Business" double precision,
     "EF_Reg" double precision,
     "EF_Score" double precision,
-    "EF_Rank" double precision
+    "EF_Rank" double precision,
+    freedom_id integer NOT NULL DEFAULT nextval('freedom_freedom_id_seq'::regclass) ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    CONSTRAINT freedom_pkey PRIMARY KEY (freedom_id)
 )
 WITH (
     OIDS = FALSE
